@@ -196,24 +196,26 @@ class _PaystackPayNowState extends State<PaystackPayNow> {
                   ),
                 )
                 ..loadRequest(Uri.parse(snapshot.data!.authUrl));
-              return Scaffold(
-                // appBar: AppBar(
-                //   automaticallyImplyLeading: false,
-                //   //TODO -> Now that the Cancel Payment works, you can remove this cancel icon.
-                //   actions: [
-                //     InkWell(
-                //         onTap: () async {
-                //           await _checkTransactionStatus(
-                //                   snapshot.data!.reference)
-                //               .then((value) {
-                //             Navigator.of(context).pop();
-                //           });
-                //         },
-                //         child: const Icon(Icons.close)),
-                //   ],
-                // ),
-                body: WebViewWidget(
-                  controller: controller,
+              return SafeArea(
+                child: Scaffold(
+                  // appBar: AppBar(
+                  //   automaticallyImplyLeading: false,
+                  //   //TODO -> Now that the Cancel Payment works, you can remove this cancel icon.
+                  //   actions: [
+                  //     InkWell(
+                  //         onTap: () async {
+                  //           await _checkTransactionStatus(
+                  //                   snapshot.data!.reference)
+                  //               .then((value) {
+                  //             Navigator.of(context).pop();
+                  //           });
+                  //         },
+                  //         child: const Icon(Icons.close)),
+                  //   ],
+                  // ),
+                  body: WebViewWidget(
+                    controller: controller,
+                  ),
                 ),
               );
             }
